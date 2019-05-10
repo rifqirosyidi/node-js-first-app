@@ -3,6 +3,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 
 // DB Authentication
+// mongoose.connect("mongodb://username:password@localhost/dbused?authSource=dbauth&w=1");
 mongoose.connect("mongodb://rief:noPassword@localhost/nodekb?authSource=admin&w=1");
 let db = mongoose.connection;
 
