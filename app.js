@@ -57,8 +57,8 @@ app.get('/article/:id', function(req, res) {
     res.render('article', {
       article:article
     });
-  })
-})
+  });
+});
 
 // Add Route
 app.get('/articles/add', function(req, res) {
@@ -77,6 +77,15 @@ app.post('/articles/add', function(req, res) {
   article.save(function(){
       res.redirect('/');
   })
+});
+
+// Load Edit form
+app.get('/article/edit/:id', function(req, res) {
+  Article.findById(req.params.id, function(err, article){
+    res.render('edit_article', {
+      article:article
+    });
+  });
 });
 
 // Start Server
